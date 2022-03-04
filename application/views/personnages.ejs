@@ -1,3 +1,25 @@
 <%- include ("commons/header") %>
     <h1 class="border rounded-lg bg-dark text-white p-2 m-3">Mes personnages</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Armes</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% 
+            var i = 0;
+            for(var personnage in mesPersonnages) {
+                i++;
+                %>
+                <tr>
+                    <th scope="row"><%= i %></th>
+                    <td><%= mesPersonnages[personnage].nom %></td>
+                    <td><%= mesPersonnages[personnage].arme %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
 <%- include ("commons/footer") %>

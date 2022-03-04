@@ -1,4 +1,5 @@
 // Charger les éléments dont nous avons besoin
+const personnages = require('./personnages.json');
 const express = require('express');
 const app = express();
 
@@ -14,7 +15,7 @@ app.get(['/','/index'],function(req, res) {
 
 // Page des personnages
 app.get('/personnages', function(req, res) {
-    res.render('personnages');
+    res.render('personnages', {mesPersonnages : personnages});
 });
 
 app.listen(9090, function() {

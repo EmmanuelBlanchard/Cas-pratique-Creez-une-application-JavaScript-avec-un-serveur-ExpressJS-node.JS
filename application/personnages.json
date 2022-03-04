@@ -1,0 +1,10 @@
+{
+    "personnage1": {
+        "nom": "Wawa",
+        "arme": "hache"
+    },
+    "personnage2": {
+        "nom": "HeadHunter",
+        "arme": "arc"
+    }
+}
