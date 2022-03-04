@@ -8,8 +8,13 @@ app.set('view engine','ejs');
 // Utiliser res.render pour charger un fichier de vue ejs
 
 // Page d'accueil
-app.get('/',function(req, res) {
+app.get(['/','/index'],function(req, res) {
     res.render('index', {pseudo : "toto",age : 23});
+});
+
+// Page des personnages
+app.get('/personnages', function(req, res) {
+    res.render('personnages');
 });
 
 app.listen(9090, function() {
