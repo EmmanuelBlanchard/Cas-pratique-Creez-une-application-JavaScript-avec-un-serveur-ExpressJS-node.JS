@@ -6,6 +6,14 @@
         </div>
         <div class="col">
             <img src="sources/images/<%= perso.arme %>.png" />
+            <form action="" method="post">
+                <select name="arme" onchange="submit()">
+                    <option value="hache">Hache</option>
+                    <option value="arc">Arc</option>
+                    <option value="marteau">Marteau</option>
+                </select>
+                <input type="hidden" name="perso" value="<%= perso.nom %>">
+            </form>
         </div>
     </div>
 <%- include ("commons/footer") %>
