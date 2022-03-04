@@ -18,6 +18,12 @@ app.get('/personnages', function(req, res) {
     res.render('personnages', {mesPersonnages : personnages});
 });
 
+// Page de personnage
+app.get('/personnage', function(req, res) {
+    var idPersonnage = req.query.perso;
+    res.render('personnage', {perso : personnages[idPersonnage]});
+});
+
 app.listen(9090, function() {
     console.log('Mon serveur écoute sur le port 9090 !');
 });

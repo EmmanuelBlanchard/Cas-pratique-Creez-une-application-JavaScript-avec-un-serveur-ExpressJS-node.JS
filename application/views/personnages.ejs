@@ -16,7 +16,7 @@
                 %>
                 <tr>
                     <th scope="row"><%= i %></th>
-                    <td><%= mesPersonnages[personnage].nom %></td>
+                    <td><a href="personnage?perso=<%= personnage %>"><%= mesPersonnages[personnage].nom %></a></td>
                     <td><%= mesPersonnages[personnage].arme %></td>
                 </tr>
             <% } %>
