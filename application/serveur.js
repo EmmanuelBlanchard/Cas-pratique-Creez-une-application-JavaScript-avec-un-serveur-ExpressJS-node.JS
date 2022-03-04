@@ -3,6 +3,7 @@ const personnages = require('./personnages.json');
 const express = require('express');
 const app = express();
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
 // Définir le moteur d'affichage à ejs
 app.set('view engine','ejs');
@@ -31,7 +32,21 @@ app.get('/personnage', function(req, res) {
 });
 
 app.post('/personnage', function(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
+    var monArme = req.body.arme;
+    var monPersonnage = req.body.perso;
+
+    var perso;
+    for(perso in personnages) {
+        if(monPersonnage === personnages[perso].nom) {
+            personnages[perso].arme = monArme;
+            break;
+        }
+    }
+    // Enregistrement
+    fs.writeFileSync("personnages.json",JSON.stringify(personnages,undefined,4));
+    // Renvoi de la page au client (navigateur)
+    res.render('personnage', {perso : personnages[perso]});
 });
 
 app.listen(9090, function() {

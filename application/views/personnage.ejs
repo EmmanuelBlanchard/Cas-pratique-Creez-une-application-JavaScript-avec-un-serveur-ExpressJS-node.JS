@@ -8,9 +8,9 @@
             <img src="sources/images/<%= perso.arme %>.png" />
             <form action="" method="post">
                 <select name="arme" onchange="submit()">
-                    <option value="hache">Hache</option>
-                    <option value="arc">Arc</option>
-                    <option value="marteau">Marteau</option>
+                    <option value="hache" <%= (perso.arme==="hache") ? "selected" : "" %>>Hache</option>
+                    <option value="arc" <%= (perso.arme==="arc") ? "selected" : "" %>>Arc</option>
+                    <option value="marteau" <%= (perso.arme==="marteau") ? "selected" : "" %>>Marteau</option>
                 </select>
                 <input type="hidden" name="perso" value="<%= perso.nom %>">
             </form>
