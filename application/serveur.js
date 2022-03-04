@@ -6,6 +6,9 @@ const app = express();
 // Définir le moteur d'affichage à ejs
 app.set('view engine','ejs');
 
+// Lorsqu'un client fait la demande d'un fichier, il doit aller le chercher dans le dossier public
+app.use(express.static('public'));
+
 // Utiliser res.render pour charger un fichier de vue ejs
 
 // Page d'accueil
