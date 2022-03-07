@@ -27,27 +27,14 @@ app.get('/personnages', function(req, res) {
 });
 
 app.post('/personnages', function(req, res) {
-    // console.log(req.body);
-/*
     var monPersonnage = req.body.perso;
     var maClasse = req.body.classe;
     console.log(maClasse);
-    console.log(monPersonnage);
-    console.log(personnages[monPersonnage].classe);
 
     personnages[monPersonnage].classe= parseInt(maClasse);
-
     // Enregistrement
-    fs.writeFileSync("personnages.json",JSON.stringify(personnages,undefined,4));
-    // Renvoi de la page au client (navigateur)
-    res.render('personnages', {mesPersonnages : personnages,mesClasses: classes});
-*/
-    var monPersonnage = req.body.perso;
-    var maClasse = req.body.classe;
-    console.log(maClasse);
-
-    personnages[monPersonnage].classe= parseInt(maClasse);
     fs.writeFileSync('personnages.json',JSON.stringify(personnages,undefined,4));
+    // Renvoi de la page au client (navigateur)
     res.render('personnages',{mesPersonnages : personnages,mesClasses : classes});
 
 });
@@ -59,7 +46,6 @@ app.get('/personnage', function(req, res) {
 });
 
 app.post('/personnage', function(req, res) {
-    // console.log(req.body);
     var monArme = req.body.arme;
     var monPersonnage = req.body.perso;
 
@@ -83,7 +69,6 @@ app.get('/classe', function(req, res) {
 });
 
 app.post('/classe', function(req, res) {
-    // console.log(req.body);
     var classeNom = req.body.nom;
     var classeDescription = req.body.description;
     
