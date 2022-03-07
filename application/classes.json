@@ -1,14 +1,14 @@
 {
     "1": {
         "nom": "Guerrier",
-        "description": "Une classe au CAC"
+        "description": "Une classe CaC"
     },
     "2": {
         "nom": "Archer",
-        "description": "une classe à distance"
+        "description": "Une classe à distance"
     },
     "3": {
         "nom": "Mage",
-        "description": "une classe maniant les arcannes"
+        "description": "Une classe maniant les arcanes"
     }
 }

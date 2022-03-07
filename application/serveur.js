@@ -26,6 +26,32 @@ app.get('/personnages', function(req, res) {
     res.render('personnages', {mesPersonnages : personnages,mesClasses: classes});
 });
 
+app.post('/personnages', function(req, res) {
+    // console.log(req.body);
+/*
+    var monPersonnage = req.body.perso;
+    var maClasse = req.body.classe;
+    console.log(maClasse);
+    console.log(monPersonnage);
+    console.log(personnages[monPersonnage].classe);
+
+    personnages[monPersonnage].classe= parseInt(maClasse);
+
+    // Enregistrement
+    fs.writeFileSync("personnages.json",JSON.stringify(personnages,undefined,4));
+    // Renvoi de la page au client (navigateur)
+    res.render('personnages', {mesPersonnages : personnages,mesClasses: classes});
+*/
+    var monPersonnage = req.body.perso;
+    var maClasse = req.body.classe;
+    console.log(maClasse);
+
+    personnages[monPersonnage].classe= parseInt(maClasse);
+    fs.writeFileSync('personnages.json',JSON.stringify(personnages,undefined,4));
+    res.render('personnages',{mesPersonnages : personnages,mesClasses : classes});
+
+});
+
 // Page de personnage
 app.get('/personnage', function(req, res) {
     var idPersonnage = req.query.perso;
