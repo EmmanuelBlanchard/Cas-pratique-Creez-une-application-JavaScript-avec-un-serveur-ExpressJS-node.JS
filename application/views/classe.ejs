@@ -1,0 +1,18 @@
+<%- include ("commons/header") %>
+    <h1 class="border rounded-lg bg-dark text-white p-2 m-3"><%= maClasse.nom %> </h1>
+    <div>
+        <% if(modification) { %> 
+            <div class="alert alert-success m-3" role="alert">
+                La modification a bien été effectuée
+            </div>
+        <% } %>
+        <form method="POST" action="">
+            <div class="form-group">
+                <label>Description : </label>
+                <input type="text" class="form-control" name="description" value="<%= maClasse.description %>" />
+            </div>
+            <input type="hidden" name="nom" value="<%= maClasse.nom %>" />
+            <input type="submit" value="Valider" class="btn btn-primary">
+        </form>
+    </div>
+<%- include ("commons/footer") %>

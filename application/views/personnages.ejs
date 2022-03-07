@@ -20,7 +20,7 @@
                     <td><a href="personnage?perso=<%= personnage %>"><%= mesPersonnages[personnage].nom %></a></td>
                     <% for(var classe in mesClasses) {
                         if(parseInt(classe) === mesPersonnages[personnage].classe) { %>
-                            <td><%= mesClasses[classe].nom %></td>
+                            <td><a href="classe?nom=<%= classe %>"><%= mesClasses[classe].nom %></a></td>
                         <% } %>
                     <% } %>
                     <td><%= mesPersonnages[personnage].arme %></td>

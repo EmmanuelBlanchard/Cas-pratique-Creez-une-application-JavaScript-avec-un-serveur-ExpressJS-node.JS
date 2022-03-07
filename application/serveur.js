@@ -50,7 +50,31 @@ app.post('/personnage', function(req, res) {
     res.render('personnage', {perso : personnages[perso]});
 });
 
+// Page de classe
+app.get('/classe', function(req, res) {
+    var nomClasse = req.query.nom;
+    res.render('classe', {maClasse : classes[nomClasse],modification:false});
+});
+
+app.post('/classe', function(req, res) {
+    // console.log(req.body);
+    var classeNom = req.body.nom;
+    var classeDescription = req.body.description;
+    
+    var classe;
+    for(classe in classes) {
+        if(classeNom === classes[classe].nom) {
+            classes[classe].description = classeDescription;
+            break;
+        }
+    }
+    // Enregistrement
+    fs.writeFileSync("classes.json",JSON.stringify(classes,undefined,4));
+    // Renvoi de la page au client (navigateur)
+    res.render('classe', {maClasse : classes[classe],modification:true});
+});
+
+
 app.listen(9090, function() {
     console.log('Mon serveur écoute sur le port 9090 !');
 });
-
