@@ -5,6 +5,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nom</th>
+            <th scope="col">Classe</th>
             <th scope="col">Armes</th>
           </tr>
         </thead>
@@ -17,6 +18,11 @@
                 <tr>
                     <th scope="row"><%= i %></th>
                     <td><a href="personnage?perso=<%= personnage %>"><%= mesPersonnages[personnage].nom %></a></td>
+                    <% for(var classe in mesClasses) {
+                        if(parseInt(classe) === mesPersonnages[personnage].classe) { %>
+                            <td><%= mesClasses[classe].nom %></td>
+                        <% } %>
+                    <% } %>
                     <td><%= mesPersonnages[personnage].arme %></td>
                 </tr>
             <% } %>
